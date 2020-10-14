@@ -3,6 +3,27 @@ import Form from './components/Form'
 import axios from 'axios'
 import schema from './validation/formSchema'
 import * as yup from 'yup'
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+body {
+  background: ${pr=> pr.theme.secondColor};
+}
+`;
+
+const StyledOutput = styled.div`
+ background: ${pr => pr.theme.firstColor};
+ text-align: center;
+ padding: 1%;
+ margin: 1%;
+ color: white;
+ border-radius: 10px;
+ border: 5px solid ${pr => pr.theme.thirdColor};
+
+ div{
+   margin: 1%;
+ }
+`;
 
 function App() {
   
@@ -66,8 +87,10 @@ function App() {
 
   return (
   <>
-  {users.map(user => <p>{user}</p>)}
-  <Form values={formValues} change={formChange} submit={formSubmit} disabled={disabled} errors={formErrors}/>
+  <GlobalStyle />
+  <StyledOutput><Form values={formValues} change={formChange} submit={formSubmit} disabled={disabled} errors={formErrors}/></StyledOutput>
+  <StyledOutput><h1>Post Request Output</h1></StyledOutput>
+  {users.map(user => <StyledOutput>{user}</StyledOutput>)}
   </>
   )
 }

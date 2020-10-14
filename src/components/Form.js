@@ -18,6 +18,7 @@ export default function Form(props) {
                 <p>{errors.tos}</p>
             </div>
             <form onSubmit={onSubmit}>
+            <div>    
             <label>
                 Name:
                 <input
@@ -27,6 +28,8 @@ export default function Form(props) {
                     onChange={onChange}
                 />
             </label>
+            </div>
+            <div>
             <label>
                 Email:
                 <input
@@ -36,6 +39,8 @@ export default function Form(props) {
                     onChange={onChange}
                 />
             </label>
+            </div>
+            <div>
             <label>
                 Password:
                 <input
@@ -45,6 +50,8 @@ export default function Form(props) {
                     onChange={onChange}
                 />
             </label>
+            </div>
+            <div>
             <label>
                 Terms of Service:
                 <input
@@ -54,7 +61,10 @@ export default function Form(props) {
                     onChange={onChange}
                 />
             </label>
+            </div>
+            <div>
             <button disabled={disabled}>Submit</button>
+            </div>
         </form>
             
         </div>
