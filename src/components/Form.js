@@ -53,6 +53,21 @@ export default function Form(props) {
             </div>
             <div>
             <label>
+                Role:
+                <select
+                    name="role"
+                    value={values.role}
+                    onChange={onChange}
+                >
+                    <option value=''>---Select A Role---</option>
+                    <option value='student'>Student</option>
+                    <option value='teacher'>Teacher</option>
+                    <option value='Team Lead'>Team Lead</option>
+                </select>
+            </label>
+            </div>
+            <div>
+            <label>
                 Terms of Service:
                 <input
                     name="tos"

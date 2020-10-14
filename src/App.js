@@ -31,13 +31,15 @@ function App() {
     name: '',
     email: '',
     password: '',
+    role: '',
     tos: false
   }
   const initialFormErrors = {
-    username: "",
+    name: "",
     email: "",
+    password: "",
     role: "",
-    civil: "",
+    tos: "",
   };
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -66,6 +68,7 @@ function App() {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
       password: formValues.password.trim(),
+      role: formValues.role,
       tos: formValues.tos
     }
     axios.post('https://reqres.in/api/users', newPerson)
